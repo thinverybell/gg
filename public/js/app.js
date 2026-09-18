@@ -1,0 +1,1 @@
+document.addEventListener('click',e=>{const a=e.target.closest('a[href="#"]');if(a)e.preventDefault()});document.addEventListener('submit',e=>{const f=e.target;if(f.action.endsWith('/#')||f.getAttribute('action')==='#'){e.preventDefault()}});

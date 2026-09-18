@@ -1,0 +1,1 @@
+<% const body=`<div class="admin-card"><table><tr><th>ID</th><th>User</th><th>Tiêu đề</th><th>Status</th></tr>${tickets.map(x=>`<tr><td>${x.id}</td><td>${x.userId}</td><td>${x.subject}</td><td>${x.status}</td></tr>`).join('')}</table></div>`; %><%- include('layout',{title:'Ticket',body}) %>

@@ -1,0 +1,1 @@
+<% const body=`<div class="admin-card"><table><tr><th>ID</th><th>User</th><th>Loại</th><th>Số tiền</th><th>Status</th></tr>${transactions.map(x=>`<tr><td>${x.id}</td><td>${x.userId}</td><td>${x.type}</td><td>${Number(x.amount||0).toLocaleString('vi-VN')}</td><td>${x.status}</td></tr>`).join('')}</table></div>`; %><%- include('layout',{title:'Giao dịch',body}) %>

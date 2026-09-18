@@ -1,0 +1,1 @@
+<% const body=`<div class="stats">${Object.entries(stats).map(([k,v])=>`<div><b>${v}</b><span>${k}</span></div>`).join('')}</div><div class="admin-card"><h2>Tổng quan hệ thống</h2><p>Trung tâm quản trị khách hàng, sản phẩm, dịch vụ, đơn hàng, ticket, giao dịch và cấu hình.</p></div>`; %><%- include('layout',{title:'Tổng quan',body}) %>

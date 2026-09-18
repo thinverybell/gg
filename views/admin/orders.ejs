@@ -1,0 +1,1 @@
+<% const body=`<div class="admin-card"><table><tr><th>ID</th><th>User</th><th>Sản phẩm</th><th>Status</th></tr>${orders.map(x=>`<tr><td>${x.id}</td><td>${x.userId}</td><td>${x.productId||'-'}</td><td>${x.status||'pending'}</td></tr>`).join('')}</table></div>`; %><%- include('layout',{title:'Đơn hàng',body}) %>

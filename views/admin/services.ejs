@@ -1,0 +1,1 @@
+<% const body=`<div class="admin-card"><table><tr><th>ID</th><th>User</th><th>Service</th><th>Status</th></tr>${services.map(x=>`<tr><td>${x.id}</td><td>${x.userId}</td><td>${x.name||x.productId||'-'}</td><td>${x.status||'active'}</td></tr>`).join('')}</table></div>`; %><%- include('layout',{title:'Dịch vụ',body}) %>

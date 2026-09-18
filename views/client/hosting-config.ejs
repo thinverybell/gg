@@ -1,0 +1,468 @@
+<div class="app-main">
+<div class="main-header">
+<div class="container">
+<h1 class="main-header-title">
+                    Thiết lập cấu hình Hosting
+                </h1>
+<p>Cấu hình Hosting linh hoạt có kích thước phù hợp với mọi ứng dụng.</p>
+</div>
+</div>
+<div class="main-body">
+<div class="container">
+
+
+<form id="frmConfigureProduct">
+<input name="configure" type="hidden" value="true"/>
+<input name="i" type="hidden" value="0"/>
+<div class="main-grid">
+<div class="main-content main-content-m-w">
+<div class="section">
+<div class="alert alert-lagom alert-primary alert-danger hidden" id="containerProductValidationErrors" role="alert">
+<span class="alert-icon ls ls-exclamation-circle"></span>
+<div class="alert-body">
+<h6 class="alert-title">Devam etmeden önce lütfen aşağıdaki hataları düzeltin:
+                                        </h6>
+<ul id="containerProductValidationErrorsList"></ul>
+</div>
+</div>
+<div class="section-body">
+<div class="panel product-config-info">
+<div class="panel-body">
+<h2>ZC-II</h2>
+<div class="product-info">
+<ul class="package-features">
+<li><b>Dual EPYC 7532 (100% vCPU)</b></li>
+<li><b>2 GB</b> Memory</li>
+<li><b>100 GB</b> SSD</li>
+<li><b>1</b> Database</li>
+<li><b>1</b> Backup</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section zc-term-section">
+<div class="section-header">
+<h2 class="section-title">Thời hạn thuê</h2>
+</div>
+<div class="section-body">
+<div class="zc-term-card">
+<div class="zc-term-top">
+<span class="zc-term-pill" id="termPill">1 tháng</span>
+<span class="zc-term-hint" id="termHint">Kéo thời hạn để xem giá ưu đãi</span>
+</div>
+<input class="zc-term-range" id="billingMonthsRange" max="3" min="0" onchange="window.zcSelectTerm &amp;&amp; window.zcSelectTerm(this.value)" oninput="window.zcSelectTerm &amp;&amp; window.zcSelectTerm(this.value)" step="1" type="range" value="0"/>
+<input id="billing_days" name="billing_days" type="hidden" value="30"/>
+<input id="billing_months" name="billing_months" type="hidden" value="1"/>
+<div class="zc-term-labels">
+<button class="zc-term-label is-active" data-days="30" data-discount="0" data-index="0" onclick="window.zcSelectTerm &amp;&amp; window.zcSelectTerm(0)" type="button">
+                                                        1 tháng                                                                                                            </button>
+<button class="zc-term-label" data-days="90" data-discount="3" data-index="1" onclick="window.zcSelectTerm &amp;&amp; window.zcSelectTerm(1)" type="button">
+                                                        3 tháng                                                                                                                <small>-3%</small>
+</button>
+<button class="zc-term-label" data-days="180" data-discount="5" data-index="2" onclick="window.zcSelectTerm &amp;&amp; window.zcSelectTerm(2)" type="button">
+                                                        6 tháng                                                                                                                <small>-5%</small>
+</button>
+<button class="zc-term-label" data-days="365" data-discount="10" data-index="3" onclick="window.zcSelectTerm &amp;&amp; window.zcSelectTerm(3)" type="button">
+                                                        12 tháng                                                                                                                <small>-10%</small>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="section zc-upgrade-section">
+<div class="section-header">
+<h2 class="section-title">Chọn Egg / phiên bản server</h2>
+</div>
+<div class="section-body">
+<div class="panel-form">
+<div class="panel-body">
+<div class="form-group">
+<label>Egg Pterodactyl</label>
+<select class="form-control" id="egg_id" name="egg_id" required="">
+<option value="">-- Chọn Egg muốn cài --</option>
+<option value="2">
+                                                                Minecraft / Minecraft Java / Forge Minecraft                                                            </option>
+<option value="7">
+                                                                Minecraft / Minecraft Java / Minecraft: Java Edition Modpack Installer                                                            </option>
+<option value="9">
+                                                                Minecraft / Minecraft Java / NeoForge                                                            </option>
+<option value="4">
+                                                                Minecraft / Minecraft Java / Paper                                                            </option>
+<option value="5">
+                                                                Minecraft / Minecraft Java / Vanilla Minecraft                                                            </option>
+<option value="8">
+                                                                Minecraft / Minecraft Bedrock / Vanilla Bedrock MC                                                            </option>
+</select>
+<small class="text-muted">Ví dụ: Paper, Purpur, Forge, Fabric...</small>
+</div>
+<div class="form-group">
+<label>Tên máy chủ</label>
+<input class="form-control" id="server_name" maxlength="64" name="server_name" placeholder="Ví dụ: ZenCheap Survival, SkyBlock của tôi..." type="text"/>
+<small class="text-muted">Không bắt buộc. Nếu bỏ trống, hệ thống sẽ dùng tên mặc định của gói.</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section zc-conf-upgrade-section">
+<div class="section-header">
+<h2 class="section-title">Nâng lẻ (tùy chọn)</h2>
+</div>
+<div class="section-body">
+<div class="zc-conf-upgrade-card">
+<div class="zc-conf-upgrade-grid">
+<details class="zc-conf-upgrade-group">
+<summary>
+<span>Nâng Port</span>
+<small>5 tuỳ chọn</small>
+</summary>
+<div class="zc-conf-upgrade-options">
+<label class="zc-conf-upgrade-option" onclick="zcToggleAddonCheckbox(this, event)">
+<input data-price="10000" name="service[]" onclick="zcOnAddonChange()" type="checkbox" value="56"/>
+<span>
+<b>Nâng thêm +1 Port</b>
+<small>+1 Port</small>
+</span>
+<strong>10.000đ/tháng</strong>
+</label>
+<label class="zc-conf-upgrade-option" onclick="zcToggleAddonCheckbox(this, event)">
+<input data-price="20000" name="service[]" onclick="zcOnAddonChange()" type="checkbox" value="57"/>
+<span>
+<b>Nâng thêm +2 Port</b>
+<small>+2 Port</small>
+</span>
+<strong>20.000đ/tháng</strong>
+</label>
+<label class="zc-conf-upgrade-option" onclick="zcToggleAddonCheckbox(this, event)">
+<input data-price="30000" name="service[]" onclick="zcOnAddonChange()" type="checkbox" value="58"/>
+<span>
+<b>Nâng thêm +3 Port</b>
+<small>+3 Port</small>
+</span>
+<strong>30.000đ/tháng</strong>
+</label>
+<label class="zc-conf-upgrade-option" onclick="zcToggleAddonCheckbox(this, event)">
+<input data-price="50000" name="service[]" onclick="zcOnAddonChange()" type="checkbox" value="59"/>
+<span>
+<b>Nâng thêm +5 Port</b>
+<small>+5 Port</small>
+</span>
+<strong>50.000đ/tháng</strong>
+</label>
+<label class="zc-conf-upgrade-option" onclick="zcToggleAddonCheckbox(this, event)">
+<input data-price="100000" name="service[]" onclick="zcOnAddonChange()" type="checkbox" value="60"/>
+<span>
+<b>Nâng thêm +10 Port</b>
+<small>+10 Port</small>
+</span>
+<strong>100.000đ/tháng</strong>
+</label>
+</div>
+</details>
+<details class="zc-conf-upgrade-group">
+<summary>
+<span>Backup / Add-on</span>
+<small>5 tuỳ chọn</small>
+</summary>
+<div class="zc-conf-upgrade-options">
+<label class="zc-conf-upgrade-option" onclick="zcToggleAddonCheckbox(this, event)">
+<input data-price="10000" name="service[]" onclick="zcOnAddonChange()" type="checkbox" value="50"/>
+<span>
+<b>Nâng Backup +1 slot</b>
+<small>+1 backup Backup</small>
+</span>
+<strong>10.000đ/tháng</strong>
+</label>
+<label class="zc-conf-upgrade-option" onclick="zcToggleAddonCheckbox(this, event)">
+<input data-price="20000" name="service[]" onclick="zcOnAddonChange()" type="checkbox" value="51"/>
+<span>
+<b>Nâng Backup +2 slot</b>
+<small>+2 backup Backup</small>
+</span>
+<strong>20.000đ/tháng</strong>
+</label>
+<label class="zc-conf-upgrade-option" onclick="zcToggleAddonCheckbox(this, event)">
+<input data-price="25000" name="service[]" onclick="zcOnAddonChange()" type="checkbox" value="52"/>
+<span>
+<b>Nâng Backup +3 slot</b>
+<small>+3 backup Backup</small>
+</span>
+<strong>25.000đ/tháng</strong>
+</label>
+<label class="zc-conf-upgrade-option" onclick="zcToggleAddonCheckbox(this, event)">
+<input data-price="35000" name="service[]" onclick="zcOnAddonChange()" type="checkbox" value="53"/>
+<span>
+<b>Nâng Backup +4 slot</b>
+<small>+4 backup Backup</small>
+</span>
+<strong>35.000đ/tháng</strong>
+</label>
+<label class="zc-conf-upgrade-option" onclick="zcToggleAddonCheckbox(this, event)">
+<input data-price="50000" name="service[]" onclick="zcOnAddonChange()" type="checkbox" value="54"/>
+<span>
+<b>Nâng Backup +5 slot</b>
+<small>+5 backup Backup</small>
+</span>
+<strong>50.000đ/tháng</strong>
+</label>
+</div>
+</details>
+<details class="zc-conf-upgrade-group">
+<summary>
+<span>Nâng vCPU</span>
+<small>6 tuỳ chọn</small>
+</summary>
+<div class="zc-conf-upgrade-options">
+<label class="zc-conf-upgrade-option" onclick="zcToggleAddonCheckbox(this, event)">
+<input data-price="15000" name="service[]" onclick="zcOnAddonChange()" type="checkbox" value="21"/>
+<span>
+<b>Nâng vCPU +100% ZenCloud</b>
+<small>+100% CPU</small>
+</span>
+<strong>15.000đ/tháng</strong>
+</label>
+<label class="zc-conf-upgrade-option" onclick="zcToggleAddonCheckbox(this, event)">
+<input data-price="30000" name="service[]" onclick="zcOnAddonChange()" type="checkbox" value="22"/>
+<span>
+<b>Nâng vCPU +200% ZenCloud</b>
+<small>+200% CPU</small>
+</span>
+<strong>30.000đ/tháng</strong>
+</label>
+<label class="zc-conf-upgrade-option" onclick="zcToggleAddonCheckbox(this, event)">
+<input data-price="45000" name="service[]" onclick="zcOnAddonChange()" type="checkbox" value="23"/>
+<span>
+<b>Nâng vCPU +300% ZenCloud</b>
+<small>+300% CPU</small>
+</span>
+<strong>45.000đ/tháng</strong>
+</label>
+<label class="zc-conf-upgrade-option" onclick="zcToggleAddonCheckbox(this, event)">
+<input data-price="60000" name="service[]" onclick="zcOnAddonChange()" type="checkbox" value="24"/>
+<span>
+<b>Nâng vCPU +400% ZenCloud</b>
+<small>+400% CPU</small>
+</span>
+<strong>60.000đ/tháng</strong>
+</label>
+<label class="zc-conf-upgrade-option" onclick="zcToggleAddonCheckbox(this, event)">
+<input data-price="75000" name="service[]" onclick="zcOnAddonChange()" type="checkbox" value="25"/>
+<span>
+<b>Nâng vCPU +500% ZenCloud</b>
+<small>+500% CPU</small>
+</span>
+<strong>75.000đ/tháng</strong>
+</label>
+<label class="zc-conf-upgrade-option" onclick="zcToggleAddonCheckbox(this, event)">
+<input data-price="90000" name="service[]" onclick="zcOnAddonChange()" type="checkbox" value="26"/>
+<span>
+<b>Nâng vCPU +600% ZenCloud</b>
+<small>+600% CPU</small>
+</span>
+<strong>90.000đ/tháng</strong>
+</label>
+</div>
+</details>
+<details class="zc-conf-upgrade-group">
+<summary>
+<span>Nâng NVMe</span>
+<small>5 tuỳ chọn</small>
+</summary>
+<div class="zc-conf-upgrade-options">
+<label class="zc-conf-upgrade-option" onclick="zcToggleAddonCheckbox(this, event)">
+<input data-price="15000" name="service[]" onclick="zcOnAddonChange()" type="checkbox" value="45"/>
+<span>
+<b>Nâng NVMe +10GB</b>
+<small>+10 GB NVMe</small>
+</span>
+<strong>15.000đ/tháng</strong>
+</label>
+<label class="zc-conf-upgrade-option" onclick="zcToggleAddonCheckbox(this, event)">
+<input data-price="30000" name="service[]" onclick="zcOnAddonChange()" type="checkbox" value="46"/>
+<span>
+<b>Nâng NVMe +20GB</b>
+<small>+20 GB NVMe</small>
+</span>
+<strong>30.000đ/tháng</strong>
+</label>
+<label class="zc-conf-upgrade-option" onclick="zcToggleAddonCheckbox(this, event)">
+<input data-price="75000" name="service[]" onclick="zcOnAddonChange()" type="checkbox" value="47"/>
+<span>
+<b>Nâng NVMe +50GB</b>
+<small>+50 GB NVMe</small>
+</span>
+<strong>75.000đ/tháng</strong>
+</label>
+<label class="zc-conf-upgrade-option" onclick="zcToggleAddonCheckbox(this, event)">
+<input data-price="150000" name="service[]" onclick="zcOnAddonChange()" type="checkbox" value="48"/>
+<span>
+<b>Nâng NVMe +100GB</b>
+<small>+100 GB NVMe</small>
+</span>
+<strong>150.000đ/tháng</strong>
+</label>
+<label class="zc-conf-upgrade-option" onclick="zcToggleAddonCheckbox(this, event)">
+<input data-price="300000" name="service[]" onclick="zcOnAddonChange()" type="checkbox" value="49"/>
+<span>
+<b>Nâng NVMe +200GB</b>
+<small>+200 GB NVMe</small>
+</span>
+<strong>300.000đ/tháng</strong>
+</label>
+</div>
+</details>
+<details class="zc-conf-upgrade-group" open="">
+<summary>
+<span>Nâng RAM</span>
+<small>5 tuỳ chọn</small>
+</summary>
+<div class="zc-conf-upgrade-options">
+<label class="zc-conf-upgrade-option" onclick="zcToggleAddonCheckbox(this, event)">
+<input data-price="20000" name="service[]" onclick="zcOnAddonChange()" type="checkbox" value="1"/>
+<span>
+<b>Nâng RAM +1GB ZenCloud</b>
+<small>+1 GB RAM</small>
+</span>
+<strong>20.000đ/tháng</strong>
+</label>
+<label class="zc-conf-upgrade-option" onclick="zcToggleAddonCheckbox(this, event)">
+<input data-price="40000" name="service[]" onclick="zcOnAddonChange()" type="checkbox" value="2"/>
+<span>
+<b>Nâng RAM +2GB ZenCloud</b>
+<small>+2 GB RAM</small>
+</span>
+<strong>40.000đ/tháng</strong>
+</label>
+<label class="zc-conf-upgrade-option" onclick="zcToggleAddonCheckbox(this, event)">
+<input data-price="80000" name="service[]" onclick="zcOnAddonChange()" type="checkbox" value="3"/>
+<span>
+<b>Nâng RAM +4GB ZenCloud</b>
+<small>+4 GB RAM</small>
+</span>
+<strong>80.000đ/tháng</strong>
+</label>
+<label class="zc-conf-upgrade-option" onclick="zcToggleAddonCheckbox(this, event)">
+<input data-price="160000" name="service[]" onclick="zcOnAddonChange()" type="checkbox" value="4"/>
+<span>
+<b>Nâng RAM +8GB ZenCloud</b>
+<small>+8 GB RAM</small>
+</span>
+<strong>160.000đ/tháng</strong>
+</label>
+<label class="zc-conf-upgrade-option" onclick="zcToggleAddonCheckbox(this, event)">
+<input data-price="240000" name="service[]" onclick="zcOnAddonChange()" type="checkbox" value="5"/>
+<span>
+<b>Nâng RAM +12GB ZenCloud</b>
+<small>+12 GB RAM</small>
+</span>
+<strong>240.000đ/tháng</strong>
+</label>
+</div>
+</details>
+</div>
+</div>
+</div>
+</div>
+<div class="section zc-info-section" style="display:none">
+<div class="section-header">
+<h2 class="section-title">Thông tin bổ sung bắt buộc</h2>
+</div>
+<div class="section-body">
+<div class="zc-required-info-card">
+<div class="zc-required-info-list" data-inputs-container="">
+<label class="zc-required-info-item" data-virtual-input="" style="display:none">
+<div class="checkbox-styled checked"><input checked="" class="icheck-control" name="info[]" style="position: absolute; top: -40%; left: -40%; display: block; width: 180%; height: 180%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;" type="checkbox" value="4"/><ins class="iCheck-helper" style="position: absolute; top: -40%; left: -40%; display: block; width: 180%; height: 180%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+<span>Tôi đã đọc và đồng ý thông số gói , chính sách sử dụng và điều khoản hỗ trợ của ZenCheap
+Link:</span>
+</label>
+<label class="zc-required-info-item" data-virtual-input="" style="display:none">
+<div class="checkbox-styled checked"><input checked="" class="icheck-control" name="info[]" style="position: absolute; top: -40%; left: -40%; display: block; width: 180%; height: 180%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;" type="checkbox" value="5"/><ins class="iCheck-helper" style="position: absolute; top: -40%; left: -40%; display: block; width: 180%; height: 180%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+<span>Tôi đã đọc và đồng ý thông số gói , chính sách sử dụng và điều khoản hỗ trợ của ZenCheap
+Link:</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+<div class="section zc-info-section">
+<div class="section-body">
+<div class="zc-required-info-card">
+<div class="zc-required-info-list" data-inputs-container="">
+<label class="zc-required-info-item" data-virtual-input="" id="zcAgreeTermsLabel" style="cursor:pointer">
+<div class="checkbox-styled"><input class="icheck-control" id="zcAgreeTerms" style="position: absolute; top: -40%; left: -40%; display: block; width: 180%; height: 180%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;" type="checkbox"/><ins class="iCheck-helper" style="position: absolute; top: -40%; left: -40%; display: block; width: 180%; height: 180%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+<span>Tôi đã đọc và đồng ý thông số gói, chính sách sử dụng và điều khoản hỗ trợ của <b>ZenCheap Digital Infrastructure</b>.</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="product-configurable-options" id="productConfigurableOptions">
+</div>
+</div>
+<div class="section section-module-output col-md-8"></div>
+</div>
+<div class="main-sidebar main-sidebar-lg">
+<div class="sidebar-sticky sidebar-sticky-summary" id="orderSummary">
+<div class="panel panel-summary panel-summary-default order-summary m-b-0x">
+<div class="panel-heading">
+<h2 class="panel-title">Thông tin đơn hàng</h2>
+</div>
+<div data-summary-style="default" id="producttotal">
+<div class="panel-body">
+<div class="summary-content content">
+<ul class="summary-list">
+<li class="list-item list-item-main">
+<span class="item-name main-item">ZC-II</span>
+<span class="item-value">30.000                                                            VND</span>
+</li>
+</ul>
+<div id="result"><ul class="summary-list"><li class="list-item"><span class="item-name">ZC-II</span><span class="item-value">30.000 VND</span></li><li class="list-item"><span class="item-name">Thời hạn thuê</span><span class="item-value">1 tháng</span></li></ul></div>
+</div>
+</div>
+<div class="panel-footer">
+<div class="form-group">
+<label for="coupon">Voucher (Mã giảm giá)</label>
+<div class="input-group">
+<input class="form-control" id="coupon" placeholder="Nhập mã voucher nếu có" style="text-transform: uppercase;" type="text"/>
+<span class="input-group-btn">
+<button class="btn btn-primary" id="btnApplyCoupon" onclick="applyCoupon('minecraft', 1)" type="button">
+                                                             Áp dụng
+                                                         </button>
+</span>
+</div>
+<div id="couponNotice" style="margin-top: 6px; font-size: 13px; display: none;"></div>
+</div>
+<div class="form-group">
+<label for="inputNs2prefix">Ghi chú (Nếu có)</label>
+<textarea class="form-control" id="note" type="text"></textarea>
+</div>
+<div class="price price-left-h">
+<span class="price-total">Tổng tiền thanh toán</span>
+<div class="price-amount amt" id="total">30.000 VNĐ</div>
+</div>
+<div class="summary-actions">
+<a class="btn btn-lg btn-primary w-100" onclick="AddToCartMinecraft(1)">
+<span id="addCart"><i class="fas fa-shopping-cart"></i> Thêm vào giỏ hàng</span>
+</a>
+<a class="btn btn-lg btn-default w-100" onclick="PaymentVps(1)" style="margin-top:10px">
+<span id="pay"><i class="ls ls-share"></i> Mua ngay</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</form>
+</div>
+</div>
+
+
+
+
+
+</div>

@@ -1,0 +1,232 @@
+<div class="app-main">
+<div class="main-header">
+<div class="container">
+<h1 class="main-header-title">Hồ sơ của bạn</h1>
+<div class="main-header-bottom">
+<ol class="breadcrumb">
+<li><a href="/"> Trang chủ</a></li>
+<li class="active">Hồ sơ của bạn</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="main-body">
+<div class="container">
+<div class="main-grid">
+<div class="main-sidebar">
+                        ﻿<div class="sidebar-sticky">
+<div class="sidebar sidebar-primary">
+<!-- Card 1: Tài khoản -->
+<div class="zc-side-card" menuitemname="Account">
+<div class="zc-side-head zc-side-head-indigo">
+<i class="fas fa-user-circle"></i>
+<span>Tài khoản</span>
+</div>
+<a class="zc-side-item" href="/client/profile" id="Primary_Sidebar-Profile-Your_Profile" menuitemname="Profile">
+<i class="fas fa-id-card"></i><span>Hồ sơ của bạn</span>
+</a>
+<a class="zc-side-item" href="/client/change-password" id="Primary_Sidebar-Profile-Change_Password" menuitemname="ChangePassword">
+<i class="fas fa-key"></i><span>Đổi mật khẩu</span>
+</a>
+</div>
+<!-- Card 2: Quản lý -->
+<div class="zc-side-card" menuitemname="Management">
+<div class="zc-side-head zc-side-head-emerald">
+<i class="fas fa-th-large"></i>
+<span>Quản lý</span>
+</div>
+<a class="zc-side-item" href="/client/dashboard" id="Primary_Sidebar-Profile-Dashboard" menuitemname="Dashboard">
+<i class="fas fa-tachometer-alt"></i><span>Dashboard</span>
+</a>
+<a class="zc-side-item" href="/client/services" id="Primary_Sidebar-Profile-Services" menuitemname="MyServices">
+<i class="fas fa-server"></i><span>Dịch vụ của tôi</span>
+</a>
+<a class="zc-side-item" href="/client/notifications" id="Primary_Sidebar-Profile-Notifications" menuitemname="Notifications">
+<i class="fas fa-bell"></i><span>Thông báo</span>
+</a>
+<a class="zc-side-item" href="/client/log-balance" id="Primary_Sidebar-Profile-LogBalance" menuitemname="LogBalance">
+<i class="fas fa-coins"></i><span>Biến động số dư</span>
+</a>
+<a class="zc-side-item" href="/client/logs" id="Primary_Sidebar-Profile-Logs" menuitemname="Logs">
+<i class="fas fa-clipboard-list"></i><span>Lịch sử hoạt động</span>
+</a>
+</div>
+<!-- Card 3: Hỗ trợ -->
+<div class="zc-side-card" menuitemname="Support">
+<div class="zc-side-head zc-side-head-violet">
+<i class="fas fa-life-ring"></i>
+<span>Hỗ trợ</span>
+</div>
+<a class="zc-side-item" href="/client/tickets" id="Primary_Sidebar-Profile-Support" menuitemname="Tickets">
+<i class="fas fa-comments"></i><span>Hỗ trợ / Ticket</span>
+</a>
+<a class="zc-side-item zc-side-logout" href="/client/logout" id="Primary_Sidebar-Profile-Logout" menuitemname="Logout">
+<i class="fas fa-sign-out-alt"></i><span>Đăng xuất</span>
+</a>
+</div>
+</div>
+</div>
+
+
+</div>
+<div class="main-content">
+<div class="zc-profile-shell">
+<!-- Account info -->
+<section class="zc-card">
+<div class="zc-card-head">
+<span class="zc-card-icon"><i class="fas fa-user"></i></span>
+<div>
+<h3 class="zc-card-title">Thông tin tài khoản</h3>
+<p class="zc-card-sub">Thông tin cơ bản và trạng thái tài khoản.</p>
+</div>
+</div>
+<div class="zc-card-body">
+<div class="zc-info-grid">
+<div class="zc-info-item">
+<label>Tài khoản</label>
+<div class="zc-info-value">SunJaeee</div>
+</div>
+<div class="zc-info-item">
+<label>Email</label>
+<div class="zc-info-value">
+                                                baocti2007@gmail.com                                                                                                    <span class="zc-badge zc-badge-success">Đã xác minh</span>
+</div>
+</div>
+<div class="zc-info-item">
+<label>Số dư</label>
+<div class="zc-info-value zc-money">0đ</div>
+</div>
+<div class="zc-info-item">
+<label>Tổng nạp</label>
+<div class="zc-info-value">0đ</div>
+</div>
+<div class="zc-info-item">
+<label>Ngày tham gia</label>
+<div class="zc-info-value">2026-08-09 16:44:25</div>
+</div>
+<div class="zc-info-item">
+<label>Trạng thái</label>
+<div class="zc-info-value">
+<span class="zc-badge zc-badge-success">Hoạt động</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Change email -->
+<section class="zc-card">
+<div class="zc-card-head">
+<span class="zc-card-icon"><i class="fas fa-envelope"></i></span>
+<div>
+<h3 class="zc-card-title">Đổi email</h3>
+<p class="zc-card-sub">Cập nhật email mới. Bạn sẽ cần xác minh email mới.</p>
+</div>
+</div>
+<div class="zc-card-body">
+<form class="zc-form-row" id="formChangeEmail">
+<div class="zc-form-group">
+<label for="inputNewEmail">Email mới</label>
+<input autocomplete="email" class="form-control" id="inputNewEmail" required="" type="email" value="baocti2007@gmail.com"/>
+</div>
+<div class="zc-form-group">
+<label> </label>
+<button class="btn btn-primary" id="btnChangeEmail" type="submit">
+<i class="fas fa-save"></i> Lưu email
+                                            </button>
+</div>
+</form>
+</div>
+</section>
+<!-- Discord link -->
+<section class="zc-card">
+<div class="zc-card-head">
+<span class="zc-card-icon" style="background:linear-gradient(135deg,#5865F2,#7289DA);"><i class="fab fa-discord"></i></span>
+<div>
+<h3 class="zc-card-title">Liên kết Discord</h3>
+<p class="zc-card-sub">Nhập Discord ID để nhận role <b>Khách hàng</b> tự động khi mua dịch vụ.</p>
+</div>
+</div>
+<div class="zc-card-body">
+<div class="zc-alert zc-alert-info">
+<i class="fas fa-info-circle"></i>
+<div>
+<b>Cách lấy Discord ID:</b>
+                                            Bật <b>Developer Mode</b> trong Discord (Settings → Advanced) → Click phải vào tên user → <b>Copy User ID</b>.
+                                        </div>
+</div>
+<form class="zc-form-row" id="formDiscordLink" style="grid-template-columns: 1fr auto;">
+<div class="zc-form-group">
+<label for="inputDiscordId">Discord User ID (snowflake)</label>
+<input autocomplete="off" class="form-control" id="inputDiscordId" maxlength="20" pattern="[0-9]{17,20}" placeholder="Ví dụ: 123456789012345678" type="text" value=""/>
+</div>
+<div class="zc-form-group">
+<label> </label>
+<button class="btn btn-primary" id="btnDiscordLink" type="submit">
+<i class="fab fa-discord"></i> Lưu Discord ID
+                                            </button>
+</div>
+</form>
+</div>
+</section>
+<!-- 2FA -->
+<section class="zc-card">
+<div class="zc-card-head">
+<span class="zc-card-icon"><i class="fas fa-shield-alt"></i></span>
+<div>
+<h3 class="zc-card-title">Xác thực 2 yếu tố (Google Authenticator)</h3>
+<p class="zc-card-sub">Tăng cường bảo mật bằng mã OTP mỗi lần đăng nhập.</p>
+</div>
+</div>
+<div class="zc-card-body">
+<div id="zc2faEnroll">
+<p>Quét mã QR bằng ứng dụng Google Authenticator, Authy hoặc 1Password, sau đó nhập mã OTP để kích hoạt.</p>
+<div class="zc-2fa-step" id="zc2faQrArea" style="display:none;">
+<div class="zc-2fa-qr">
+<img alt="QR Code" id="zc2faQrImg" src=""/>
+</div>
+<div class="zc-2fa-secret">
+<label>Hoặc nhập thủ công Secret</label>
+<code id="zc2faSecretText"></code>
+</div>
+</div>
+<button class="btn btn-primary" id="btn2FAStart" type="button">
+<i class="fas fa-qrcode"></i> Bắt đầu kích hoạt
+                                            </button>
+<form class="zc-form-row" id="form2FAEnable" style="display:none; margin-top:20px;">
+<div class="zc-form-group">
+<label>Nhập mã OTP từ ứng dụng</label>
+<input class="form-control" id="input2FAOtp" maxlength="6" pattern="[0-9]{6}" placeholder="Mã OTP 6 số" required="" type="text"/>
+</div>
+<div class="zc-form-group">
+<label> </label>
+<button class="btn btn-success" id="btn2FAEnable" type="submit">
+<i class="fas fa-check"></i> Kích hoạt
+                                                    </button>
+</div>
+</form>
+</div>
+</div>
+</section>
+<!-- Recent activity -->
+<section class="zc-card">
+<div class="zc-card-head">
+<span class="zc-card-icon"><i class="fas fa-history"></i></span>
+<div>
+<h3 class="zc-card-title">Lịch sử hoạt động</h3>
+<p class="zc-card-sub">10 hoạt động gần nhất của tài khoản.</p>
+</div>
+</div>
+<div class="zc-card-body">
+<div class="zc-empty">Chưa có hoạt động nào được ghi nhận.</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+</div>

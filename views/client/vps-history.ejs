@@ -1,0 +1,95 @@
+<div class="app-main">
+<div class="main-header">
+<div class="container">
+<div class="main-header-top">
+<h1 class="main-header-title">Lịch sử mua vps </h1>
+<div class="search-group">
+<div class="search-field">
+<i class="search-field-icon lm lm-search"></i>
+<input class="form-control" id="table-search" placeholder="Tìm kiếm..." type="text"/>
+</div>
+</div>
+</div>
+<div class="main-header-bottom">
+<ol class="breadcrumb">
+<li>
+<a href="/"> Trang chủ
+                            </a>
+</li>
+<li class="active">
+                            Lịch sử mua vps
+                        </li>
+</ol>
+</div>
+</div>
+</div>
+<div class="main-body">
+<div class="container">
+<div class="main-grid">
+<div class="main-content">
+<link href="/lagom/assets/css/dataTables.responsive.css" rel="stylesheet" type="text/css"/>
+
+
+
+
+<div class="table-container">
+<div class="table-top">
+<div class="d-flex">
+<label>View</label>
+<div class="dropdown view-filter-btns" data-table-filters="">
+<button class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" type="button">
+<span class="status hidden"></span>
+<span>All Entries</span>
+<i class="ls ls-caret"></i>
+</button>
+<ul class="dropdown-menu" role="menu">
+<li><a href="#"><span data-value="all">All Entries</span></a></li>
+<li data-status="Active"><a href="#"><span class="status status-active" data-status-class="active" data-value="Active">Active</span></a>
+</li>
+</ul>
+</div>
+</div>
+<label class="d-flex" data-inactive-services="">
+<span class="hidden" data-inactive-services-text="hide">Hide <b>0</b> inactive
+                                        services</span>
+<span data-inactive-services-text="hidden"><b>0</b> inactive services has been
+                                        hidden</span>
+<div class="switch switch--sm">
+<input class="switch__checkbox" data-inactive-services-checkbox="" name="hideInactiveSercices" type="checkbox" value="1"/>
+<span class="switch__container"><span class="switch__handle"></span></span>
+</div>
+</label>
+</div>
+<table class="table table-list" id="tableServicesList">
+<thead>
+<tr>
+<th data-priority="1"><button class="btn-table-collapse" type="button"></button>Sản phẩm<span class="sorting-arrows"></span></th>
+<th data-priority="2">IP<span class="sorting-arrows"></span></th>
+<th data-priority="3">Giá tiền<span class="sorting-arrows"></span></th>
+<th data-priority="4">Thông tin<span class="sorting-arrows"></span></th>
+<th data-priority="5">Thời gian<span class="sorting-arrows"></span></th>
+<th data-priority="6">Trạng thái<span class="sorting-arrows"></span></th>
+<th data-priority="7">Thao tác</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<div class="loader loader-table" id="tableLoading">
+<div class="spinner">
+<div class="rect1"></div>
+<div class="rect2"></div>
+<div class="rect3"></div>
+<div class="rect4"></div>
+<div class="rect5"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+</div>

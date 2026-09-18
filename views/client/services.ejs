@@ -1,0 +1,340 @@
+<div class="app-main">
+
+<div class="main-body">
+<div class="container">
+<div class="main-header">
+<h1 class="main-header-title">Dashboard</h1>
+<div class="main-header-bottom">
+<ol class="breadcrumb">
+<li><a href="/">Trang chủ</a></li>
+<li class="active">Dashboard</li>
+</ol>
+</div>
+</div>
+<div class="main-grid">
+<div class="main-sidebar">﻿<div class="sidebar-sticky">
+<div class="sidebar sidebar-primary">
+<!-- Card 1: Tài khoản -->
+<div class="zc-side-card" menuitemname="Account">
+<div class="zc-side-head zc-side-head-indigo">
+<i class="fas fa-user-circle"></i>
+<span>Tài khoản</span>
+</div>
+<a class="zc-side-item" href="/client/profile" id="Primary_Sidebar-Profile-Your_Profile" menuitemname="Profile">
+<i class="fas fa-id-card"></i><span>Hồ sơ của bạn</span>
+</a>
+<a class="zc-side-item" href="/client/change-password" id="Primary_Sidebar-Profile-Change_Password" menuitemname="ChangePassword">
+<i class="fas fa-key"></i><span>Đổi mật khẩu</span>
+</a>
+</div>
+<!-- Card 2: Quản lý -->
+<div class="zc-side-card" menuitemname="Management">
+<div class="zc-side-head zc-side-head-emerald">
+<i class="fas fa-th-large"></i>
+<span>Quản lý</span>
+</div>
+<a class="zc-side-item" href="/client/dashboard" id="Primary_Sidebar-Profile-Dashboard" menuitemname="Dashboard">
+<i class="fas fa-tachometer-alt"></i><span>Dashboard</span>
+</a>
+<a class="zc-side-item" href="/client/services" id="Primary_Sidebar-Profile-Services" menuitemname="MyServices">
+<i class="fas fa-server"></i><span>Dịch vụ của tôi</span>
+</a>
+<a class="zc-side-item" href="/client/notifications" id="Primary_Sidebar-Profile-Notifications" menuitemname="Notifications">
+<i class="fas fa-bell"></i><span>Thông báo</span>
+</a>
+<a class="zc-side-item" href="/client/log-balance" id="Primary_Sidebar-Profile-LogBalance" menuitemname="LogBalance">
+<i class="fas fa-coins"></i><span>Biến động số dư</span>
+</a>
+<a class="zc-side-item" href="/client/logs" id="Primary_Sidebar-Profile-Logs" menuitemname="Logs">
+<i class="fas fa-clipboard-list"></i><span>Lịch sử hoạt động</span>
+</a>
+</div>
+<!-- Card 3: Hỗ trợ -->
+<div class="zc-side-card" menuitemname="Support">
+<div class="zc-side-head zc-side-head-violet">
+<i class="fas fa-life-ring"></i>
+<span>Hỗ trợ</span>
+</div>
+<a class="zc-side-item" href="/client/tickets" id="Primary_Sidebar-Profile-Support" menuitemname="Tickets">
+<i class="fas fa-comments"></i><span>Hỗ trợ / Ticket</span>
+</a>
+<a class="zc-side-item zc-side-logout" href="/client/logout" id="Primary_Sidebar-Profile-Logout" menuitemname="Logout">
+<i class="fas fa-sign-out-alt"></i><span>Đăng xuất</span>
+</a>
+</div>
+</div>
+</div>
+
+
+</div>
+<div class="main-content">
+<div class="zcd-wrap">
+<!-- Summary header -->
+<div class="zcd-summary">
+<div class="d-flex align-items-center gap-3">
+<div class="zc-greet-icon"><i class="fas fa-hand-sparkles"></i></div>
+<div class="flex-grow-1">
+<h1>Xin chào, SunJaeee 👋</h1>
+<p>Quản lý tất cả dịch vụ, hóa đơn và ticket của bạn tại đây.</p>
+</div>
+</div>
+<div class="zcd-stat-grid">
+<div class="zcd-stat">
+<i class="fas fa-wallet"></i>
+<div class="label">Số dư</div>
+<div class="value zcd-counter" data-target="0">0</div>
+</div>
+<div class="zcd-stat">
+<i class="fas fa-cubes"></i>
+<div class="label">Dịch vụ</div>
+<div class="value zcd-counter" data-target="0">0</div>
+</div>
+<div class="zcd-stat">
+<i class="fas fa-calendar-alt"></i>
+<div class="label">Sắp hết hạn</div>
+<div class="value zcd-counter" data-target="0">0</div>
+</div>
+<div class="zcd-stat">
+<i class="fas fa-file-invoice"></i>
+<div class="label">Chưa thanh toán</div>
+<div class="value zcd-counter" data-target="0">0</div>
+</div>
+<div class="zcd-stat">
+<i class="fas fa-life-ring"></i>
+<div class="label">Ticket mở</div>
+<div class="value zcd-counter" data-target="0">0</div>
+</div>
+</div>
+</div>
+<!-- Grid User Info & Notifications -->
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 18px; margin-bottom: 18px;">
+<!-- User Info -->
+<div class="zcd-card" style="margin-bottom: 0;">
+<div class="zcd-card-head">
+<span class="icon" style="background: #10b981;"><i class="fas fa-id-card"></i></span>
+<h3>Thông tin của bạn</h3>
+</div>
+<div class="zcd-card-body" style="display:flex; flex-direction:column; justify-content:space-between; height:calc(100% - 69px);">
+<dl style="margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:14px;">
+<div style="border-bottom:1px dashed #e2e8f0; padding-bottom:12px;">
+<dt style="font-weight:600; color:#64748b; font-size:12px; margin:0 0 6px 0; text-transform:uppercase; letter-spacing:0.5px;">Tên tài khoản</dt>
+<dd style="margin:0; font-weight:700; color:#0f172a; font-size:15px;">SunJaeee</dd>
+</div>
+<div style="border-bottom:1px dashed #e2e8f0; padding-bottom:12px;">
+<dt style="font-weight:600; color:#64748b; font-size:12px; margin:0 0 6px 0; text-transform:uppercase; letter-spacing:0.5px;">Email</dt>
+<dd style="margin:0; font-weight:700; color:#0f172a; font-size:15px;">baocti2007@gmail.com</dd>
+</div>
+<div style="border-bottom:1px dashed #e2e8f0; padding-bottom:12px;">
+<dt style="font-weight:600; color:#64748b; font-size:12px; margin:0 0 6px 0; text-transform:uppercase; letter-spacing:0.5px;">Ngày tham gia</dt>
+<dd style="margin:0; font-weight:700; color:#0f172a; font-size:15px;">09/08/2026</dd>
+</div>
+<div style="padding-top:4px;">
+<dt style="font-weight:600; color:#64748b; font-size:12px; margin:0 0 6px 0; text-transform:uppercase; letter-spacing:0.5px;">Số dư</dt>
+<dd style="margin:0; font-weight:800; color:#10b981; font-size:18px;">0đ</dd>
+</div>
+</dl>
+<div style="margin-top: auto; padding-top:20px;">
+<a class="zcd-btn" href="/client/profile" style="width:100%; justify-content:center; background:#fff; color:#0f172a !important; border:1px solid #cbd5e1; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.2s;">
+<i class="fas fa-user-edit"></i> Cập nhật thông tin
+                                    </a>
+</div>
+</div>
+</div>
+<!-- Notifications -->
+<!-- Empty Notifications State -->
+<div class="zcd-card" style="margin-bottom: 0;">
+<div class="zcd-card-head">
+<span class="icon" style="background: #f59e0b;"><i class="fas fa-bell"></i></span>
+<h3>Thông báo quan trọng</h3>
+<span class="badge-num">0</span>
+</div>
+<div class="zcd-card-body" style="display:flex; align-items:center; justify-content:center; height:calc(100% - 69px); min-height: 200px; color:#94a3b8; font-size:14px;">
+<div><i class="fas fa-bell-slash"></i> Bạn chưa có thông báo nào.</div>
+</div>
+</div>
+</div>
+<!-- Search bar -->
+<div class="zcd-search-bar">
+<i class="fas fa-search" style="color:#94a3b8"></i>
+<input id="zcdSearch" placeholder="Tìm dịch vụ, IP, domain, mã hóa đơn, mã ticket..." type="text"/>
+<select id="zcdServiceType">
+<option value="">Tất cả loại dịch vụ</option>
+<option value="hosting">Hosting</option>
+<option value="vps">VPS</option>
+<option value="minecraft">Minecraft</option>
+<option value="domain">Domain</option>
+<option value="dedicated">Dedicated</option>
+<option value="license">License</option>
+<option value="other">Khác</option>
+</select>
+</div>
+<!-- DỊCH VỤ CỦA BẠN (member services list - urgent first) -->
+<div class="zcd-card">
+<div class="zcd-card-head">
+<span class="icon" style="background: #4f46e5;"><i class="fas fa-server"></i></span>
+<h3>Dịch vụ của bạn</h3>
+<span class="badge-num">0</span>
+<a class="zcd-btn zcd-btn-ghost ms-auto" href="/client/services">Quản lý đầy đủ <i class="fas fa-arrow-right"></i></a>
+</div>
+<div class="zcd-card-body">
+<div class="zcd-empty-state">
+<i class="fas fa-box-open"></i>
+                                    Bạn chưa có dịch vụ nào. <a class="zcd-btn zcd-btn-ghost" href="/store_minecraft" style="margin-left:8px">Mua ngay</a>
+</div>
+</div>
+</div>
+<!-- DỊCH VỤ ĐANG DÙNG -->
+<div class="zcd-card">
+<div class="zcd-card-head">
+<span class="icon" style="background: #3b82f6;"><i class="fas fa-cubes"></i></span>
+<h3>Dịch vụ đang dùng</h3>
+<span class="badge-num">0</span>
+<a class="zcd-btn zcd-btn-ghost ms-auto" href="/client/services">Tất cả <i class="fas fa-arrow-right"></i></a>
+</div>
+<div class="zcd-card-body">
+<div class="zcd-service-grid">
+<a class="zcd-service-tile zcd-empty" href="#">
+<span class="svc-icon" style="background: #3b82f6;"><i class="fas fa-server"></i></span>
+<div class="svc-name">Hosting</div>
+<div class="svc-count">0</div>
+</a>
+<a class="zcd-service-tile zcd-empty" href="#">
+<span class="svc-icon" style="background: #10b981;"><i class="fas fa-cloud"></i></span>
+<div class="svc-name">VPS</div>
+<div class="svc-count">0</div>
+</a>
+<a class="zcd-service-tile zcd-empty" href="#">
+<span class="svc-icon" style="background: #f59e0b;"><i class="fas fa-cubes"></i></span>
+<div class="svc-name">Minecraft</div>
+<div class="svc-count">0</div>
+</a>
+<a class="zcd-service-tile zcd-empty" href="#">
+<span class="svc-icon" style="background: #8b5cf6;"><i class="fas fa-globe"></i></span>
+<div class="svc-name">Domain</div>
+<div class="svc-count">0</div>
+</a>
+<a class="zcd-service-tile zcd-empty" href="#">
+<span class="svc-icon" style="background: #ef4444;"><i class="fas fa-hdd"></i></span>
+<div class="svc-name">Dedicated</div>
+<div class="svc-count">0</div>
+</a>
+<a class="zcd-service-tile zcd-empty" href="#">
+<span class="svc-icon" style="background: #06b6d4;"><i class="fas fa-key"></i></span>
+<div class="svc-name">License</div>
+<div class="svc-count">0</div>
+</a>
+<a class="zcd-service-tile zcd-empty" href="#">
+<span class="svc-icon" style="background: #64748b;"><i class="fas fa-ellipsis-h"></i></span>
+<div class="svc-name">Khác</div>
+<div class="svc-count">0</div>
+</a>
+</div>
+<div class="zcd-progress">
+<div class="zcd-progress-bar" style="width: 0%"></div>
+</div>
+<div class="zcd-progress-label">
+<span>Tổng dịch vụ đang hoạt động</span>
+<span>0 dịch vụ</span>
+</div>
+</div>
+</div>
+<!-- NGÀY HẾT HẠN -->
+<div class="zcd-card">
+<div class="zcd-card-head">
+<span class="icon" style="background: #ef4444;"><i class="fas fa-calendar-alt"></i></span>
+<h3>Ngày hết hạn</h3>
+<span class="badge-num">0</span>
+</div>
+<div class="zcd-card-body">
+<div class="zcd-empty-state"><i class="fas fa-calendar-check"></i>Bạn không có dịch vụ nào sắp hết hạn.</div>
+</div>
+</div>
+<!-- HÓA ĐƠN -->
+<div class="zcd-card">
+<div class="zcd-card-head">
+<span class="icon" style="background: #10b981;"><i class="fas fa-file-invoice-dollar"></i></span>
+<h3>Hóa đơn</h3>
+<span class="badge-num">0</span>
+<a class="zcd-btn zcd-btn-ghost ms-auto" href="/client/invoices">Tất cả <i class="fas fa-arrow-right"></i></a>
+</div>
+<div class="zcd-card-body">
+<div class="zcd-stat-cards">
+<div class="zcd-stat-mini">
+<span class="ic" style="background:#10b981;"><i class="fas fa-check"></i></span>
+<div><div class="lb">Đã thanh toán</div><div class="vl">0</div></div>
+</div>
+<div class="zcd-stat-mini">
+<span class="ic" style="background:#f59e0b;"><i class="fas fa-clock"></i></span>
+<div><div class="lb">Chưa thanh toán</div><div class="vl">0</div></div>
+</div>
+<div class="zcd-stat-mini">
+<span class="ic" style="background:#ef4444;"><i class="fas fa-exclamation-triangle"></i></span>
+<div><div class="lb">Quá hạn</div><div class="vl">0</div></div>
+</div>
+<div class="zcd-stat-mini">
+<span class="ic" style="background:#3b82f6;"><i class="fas fa-spinner"></i></span>
+<div><div class="lb">Đang xử lý</div><div class="vl">0</div></div>
+</div>
+<div class="zcd-stat-mini">
+<span class="ic" style="background:#8b5cf6;"><i class="fas fa-undo"></i></span>
+<div><div class="lb">Hoàn tiền</div><div class="vl">0</div></div>
+</div>
+</div>
+<div class="zcd-empty-state"><i class="fas fa-file-invoice"></i>Chưa có hóa đơn nào.</div>
+</div>
+</div>
+<!-- GIA HẠN -->
+<div class="zcd-card">
+<div class="zcd-card-head">
+<span class="icon" style="background: #8b5cf6;"><i class="fas fa-sync-alt"></i></span>
+<h3>Gia hạn dịch vụ</h3>
+<span class="badge-num">0</span>
+</div>
+<div class="zcd-card-body">
+<div class="zcd-empty-state"><i class="fas fa-box-open"></i>Bạn không có dịch vụ nào đang hoạt động để gia hạn.</div>
+</div>
+</div>
+<!-- TICKETS -->
+<div class="zcd-card">
+<div class="zcd-card-head">
+<span class="icon" style="background: #ec4899;"><i class="fas fa-life-ring"></i></span>
+<h3>Ticket hỗ trợ</h3>
+<span class="badge-num">0</span>
+<a class="zcd-btn zcd-btn-ghost ms-auto" href="/client/tickets">Tất cả <i class="fas fa-arrow-right"></i></a>
+<a class="zcd-btn" href="/client/tickets/new" style="margin-left:8px;"><i class="fas fa-plus"></i> Tạo Ticket</a>
+</div>
+<div class="zcd-card-body">
+<div class="zcd-stat-cards">
+<div class="zcd-stat-mini">
+<span class="ic" style="background:#3b82f6;"><i class="fas fa-folder-open"></i></span>
+<div><div class="lb">Tổng</div><div class="vl">0</div></div>
+</div>
+<div class="zcd-stat-mini">
+<span class="ic" style="background:#10b981;"><i class="fas fa-spinner"></i></span>
+<div><div class="lb">Đang mở</div><div class="vl">0</div></div>
+</div>
+<div class="zcd-stat-mini">
+<span class="ic" style="background:#f59e0b;"><i class="fas fa-cogs"></i></span>
+<div><div class="lb">Đang xử lý</div><div class="vl">0</div></div>
+</div>
+<div class="zcd-stat-mini">
+<span class="ic" style="background:#8b5cf6;"><i class="fas fa-reply"></i></span>
+<div><div class="lb">Đã trả lời</div><div class="vl">0</div></div>
+</div>
+<div class="zcd-stat-mini">
+<span class="ic" style="background:#64748b;"><i class="fas fa-check-circle"></i></span>
+<div><div class="lb">Đã đóng</div><div class="vl">0</div></div>
+</div>
+</div>
+<div class="zcd-empty-state"><i class="fas fa-life-ring"></i>Bạn chưa tạo ticket nào.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+</div>

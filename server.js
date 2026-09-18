@@ -1,0 +1,1 @@
+require('dotenv').config();const app=require('./src/app');const {port,host}=require('./src/config/env');app.listen(port,host,()=>console.log(`[ZenCheap] http://${host==='0.0.0.0'?'localhost':host}:${port}`));

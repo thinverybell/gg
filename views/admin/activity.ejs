@@ -1,0 +1,1 @@
+<% const body=`<div class="admin-card"><table><tr><th>Thời gian</th><th>User</th><th>Loại</th></tr>${activity.map(x=>`<tr><td>${new Date(x.createdAt).toLocaleString('vi-VN')}</td><td>${x.userId||'-'}</td><td>${x.type||'-'}</td></tr>`).join('')}</table></div>`; %><%- include('layout',{title:'Lịch sử hoạt động',body}) %>

@@ -1,0 +1,221 @@
+<div class="app-main">
+<!-- HERO HEADER -->
+<div class="zc-stripe-hero">
+<div class="container">
+<div class="zc-stripe-hero-inner">
+<div class="zc-stripe-hero-text">
+<div class="zc-hero-badge">
+<i class="fas fa-bolt"></i> Auto Card Recharge System 24/7
+                        </div>
+<h1 class="zc-hero-title">
+                            Nạp Thẻ Cào Tự Động
+                        </h1>
+<p class="zc-hero-desc">
+                            Hỗ trợ Viettel, Vinaphone, MobiFone, Zing, Garena. Xử lý gạch thẻ tự động từ 5s - 10s, cộng tiền trực tiếp vào ví.
+                        </p>
+</div>
+<div class="zc-hero-balance-card">
+<div class="zc-balance-icon-bg">
+<i class="fas fa-wallet"></i>
+</div>
+<div class="zc-balance-details">
+<div class="zc-balance-label">Số dư ví hiện tại</div>
+<div class="zc-balance-amount">0 <small>VNĐ</small></div>
+<a class="zc-balance-link" href="/client/log-balance">
+<i class="fas fa-history"></i> Lịch sử số dư
+                            </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="main-body zc-stripe-body">
+<div class="container">
+<div class="zc-stripe-grid">
+<!-- LEFT MAIN PAYMENT COLUMN -->
+<div class="zc-stripe-main-col">
+<div class="zc-stripe-card">
+<div class="zc-card-header">
+<div class="zc-card-header-icon">
+<i class="fas fa-sim-card"></i>
+</div>
+<div class="zc-card-header-info">
+<h2>Gạch thẻ cào trực tuyến</h2>
+<p>Nhập đúng Seri và Mã Thẻ. Hệ thống sẽ tự động đối soát và cộng tiền vào tài khoản.</p>
+</div>
+</div>
+<form class="zc-card-form-body" id="cardRechargeForm">
+<!-- 1. CHỌN NHÀ MẠNG -->
+<div class="form-group mb-4">
+<label class="zc-form-label"><i class="fas fa-hashtag text-primary mr-1"></i> 1. Chọn Nhà Mạng</label>
+<div class="zc-telco-selection-grid">
+<label class="zc-telco-card-label" data-provider="VIETTEL">
+<input name="provider_radio" required="" type="radio" value="VIETTEL"/>
+<span class="zc-telco-custom-box">
+<img alt="Viettel" class="zc-telco-logo-img" src="https://client.zencheap.net/assets/images/viettel.jpg"/>
+</span>
+</label>
+<label class="zc-telco-card-label" data-provider="VINAPHONE">
+<input name="provider_radio" required="" type="radio" value="VINAPHONE"/>
+<span class="zc-telco-custom-box">
+<img alt="Vinaphone" class="zc-telco-logo-img" src="https://client.zencheap.net/assets/images/VinaPhone.png"/>
+</span>
+</label>
+<label class="zc-telco-card-label" data-provider="ZING">
+<input name="provider_radio" required="" type="radio" value="ZING"/>
+<span class="zc-telco-custom-box">
+<img alt="Zing" class="zc-telco-logo-img" src="https://client.zencheap.net/assets/images/Zing.png"/>
+</span>
+</label>
+<label class="zc-telco-card-label" data-provider="GARENA">
+<input name="provider_radio" required="" type="radio" value="GARENA"/>
+<span class="zc-telco-custom-box">
+<img alt="Garena" class="zc-telco-logo-img" src="https://client.zencheap.net/assets/images/garena.png"/>
+</span>
+</label>
+</div>
+</div>
+<input id="providerInput" name="provider" required="" type="hidden"/>
+<!-- 2. CHỌN MỆNH GIÁ THẺ -->
+<div class="form-group mb-4">
+<div class="d-flex justify-content-between align-items-center mb-2">
+<label class="zc-form-label m-0"><i class="fas fa-coins text-warning mr-1"></i> 2. Chọn Mệnh Giá Thẻ</label>
+<span class="badge badge-warning zc-warn-badge"><i class="fas fa-exclamation-triangle"></i> Chọn đúng mệnh giá</span>
+</div>
+<div class="zc-select-custom-wrapper">
+<select class="zc-form-select-control" disabled="" id="denominationSelect" name="denomination" required="">
+<option value="">-- Vui lòng chọn nhà mạng trước --</option>
+</select>
+<i class="fas fa-chevron-down zc-select-arrow"></i>
+</div>
+</div>
+<!-- 3. SERIAL & PIN INPUTS -->
+<div class="row">
+<div class="col-md-6 mb-4">
+<div class="form-group">
+<label class="zc-form-label"><i class="fas fa-barcode text-primary mr-1"></i> Số Seri Thẻ</label>
+<div class="zc-input-field-wrapper">
+<input autocomplete="off" class="zc-form-input-control" id="cardSerial" maxlength="50" name="serial" placeholder="Nhập số Seri in trên thẻ" required="" type="text"/>
+<i class="fas fa-barcode zc-input-decor-icon"></i>
+</div>
+</div>
+</div>
+<div class="col-md-6 mb-4">
+<div class="form-group">
+<label class="zc-form-label"><i class="fas fa-key text-warning mr-1"></i> Mã Thẻ (PIN)</label>
+<div class="zc-input-field-wrapper">
+<input autocomplete="off" class="zc-form-input-control" id="cardPin" maxlength="50" name="pin" placeholder="Nhập mã thẻ cào dưới lớp bạc" required="" type="text"/>
+<i class="fas fa-shield-alt zc-input-decor-icon"></i>
+</div>
+</div>
+</div>
+</div>
+<!-- SUMMARY INFOS -->
+<div class="zc-card-summary-infos">
+<div class="zc-info-row">
+<span class="zc-info-label"><i class="fas fa-info-circle text-success"></i> Chiết khấu hệ thống:</span>
+<span class="zc-info-value text-success">Duyệt tự động 5s - 10s</span>
+</div>
+<div class="zc-info-row">
+<span class="zc-info-label"><i class="fas fa-exclamation-triangle text-danger"></i> Cảnh báo mệnh giá:</span>
+<span class="zc-info-value text-danger font-weight-bold">Chọn sai mệnh giá có thể mất thẻ!</span>
+</div>
+<div class="zc-info-row zc-info-row--total mt-3">
+<span class="zc-info-label">Thực nhận (ước tính):</span>
+<span class="zc-info-value zc-total-receive" id="estimatedAmount">--</span>
+</div>
+</div>
+<!-- SUBMIT BUTTON -->
+<div class="mt-4">
+<div class="zc-alert zc-alert--info" id="feeNotice" style="display:none; font-size:13.5px; padding:14px 20px; margin-bottom:18px;"></div>
+<button class="zc-submit-recharge-btn w-100" id="submitCard" type="submit">
+<i class="fas fa-paper-plane mr-2"></i> NẠP THẺ NGAY
+                                        </button>
+</div>
+</form>
+</div>
+</div>
+<!-- RIGHT SIDEBAR COLUMN -->
+<div class="zc-stripe-side-col">
+<!-- NOTICE CARD -->
+<div class="zc-stripe-card zc-stripe-card--sidebar">
+<h3 class="zc-sidebar-title text-warning">
+<i class="fas fa-exclamation-triangle text-warning"></i> Lưu ý khi nạp thẻ
+                            </h3>
+<div class="zc-sidebar-content text-muted">
+<p style="padding: 0px; margin: 0px; outline: 0px; border: 0px;"><b><font color="#000000">Hệ thống xử lý 5s-10s 1 thẻ.</font></b></p><p style="padding: 0px; margin: 0px; outline: 0px; border: 0px;"><b><font color="#000000">Vui lòng gửi đúng mệnh giá, sai mệnh giá mất thẻ.</font></b></p> </div>
+</div>
+<!-- ADVANTAGES CARD -->
+<div class="zc-stripe-card zc-stripe-card--sidebar mt-4">
+<h3 class="zc-sidebar-title text-success">
+<i class="fas fa-check-circle text-success"></i> Ưu điểm dịch vụ
+                            </h3>
+<div class="zc-sidebar-content">
+<div class="zc-advantage-item">
+<i class="fas fa-bolt text-warning"></i>
+<div>
+<strong>Gạch thẻ siêu tốc</strong>
+<p class="m-0 text-muted">Hệ thống tự động xử lý thẻ trong 5 - 10 giây.</p>
+</div>
+</div>
+<div class="zc-advantage-item mt-3">
+<i class="fas fa-percentage text-success"></i>
+<div>
+<strong>Chiết khấu tốt nhất</strong>
+<p class="m-0 text-muted">Tỉ lệ gạch thẻ cạnh tranh, không trừ phí ẩn.</p>
+</div>
+</div>
+<div class="zc-advantage-item mt-3">
+<i class="fas fa-headset text-primary"></i>
+<div>
+<strong>Hỗ trợ 24/7</strong>
+<p class="m-0 text-muted">Đội ngũ hỗ trợ giải quyết sự cố gạch thẻ nhanh chóng.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- HISTORY SECTION -->
+<div class="zc-payment-card-container zc-history-section mt-5">
+<section class="zc-payment-section">
+<div class="zc-section-head">
+<span class="zc-section-icon zc-history-icon"><i class="fas fa-history"></i></span>
+<div>
+<h2>Lịch sử nạp thẻ cào</h2>
+<p>Theo dõi 50 giao dịch nạp thẻ gần đây của bạn.</p>
+</div>
+</div>
+<div class="table-responsive zc-table-container">
+<table class="table zc-modern-table">
+<thead>
+<tr>
+<th>ID</th>
+<th>Nhà mạng</th>
+<th>Mệnh giá</th>
+<th>Nhận được</th>
+<th>Trạng thái</th>
+<th>Thời gian</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center text-muted py-5" colspan="6">
+<i class="fas fa-receipt text-secondary" style="font-size: 32px; display: block; margin-bottom: 12px;"></i>
+                                            Chưa có giao dịch nạp thẻ cào nào được thực hiện.
+                                        </td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+</div>
+</div>
+<!-- STYLE BLOCK -->
+
+<!-- SCRIPT BLOCK -->
+
+
+
+</div>
