@@ -1,0 +1,35 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "demo@zencheap.local",
+      "name": "SunJaeee",
+      "role": "client",
+      "password": "scrypt$3061ef21d34981ecee09d129cc553d84$52561d2d3d34ef7b03aa4cf190c9d44301bf9f051e24dcd6c991fa9bc822ce665834954d7d4758a568b597ff13ff661c43a3dbf2c9469ed7921be44855aaa776",
+      "balance": 0,
+      "status": "active"
+    },
+    {
+      "id": 2,
+      "email": "admin@zencheap.local",
+      "name": "Administrator",
+      "role": "admin",
+      "password": "scrypt$140da87977d798090d5f490bddbe77a0$55461b6ddaef5cf0ff819ebcc01be4cff37c6962b37d9b6fe7ac263274875e4566a8af99e1c59760f2f4ab725ccf51b631cd91b4d31cbf5c4d6f0654be315ef8",
+      "balance": 0,
+      "status": "active"
+    }
+  ],
+  "products": [],
+  "services": [],
+  "orders": [],
+  "tickets": [],
+  "notifications": [],
+  "transactions": [],
+  "activity": [],
+  "cart": [],
+  "settings": {
+    "siteName": "ZenCheap Cloud",
+    "currency": "VND",
+    "maintenance": false
+  }
+}
